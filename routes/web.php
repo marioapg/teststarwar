@@ -17,3 +17,5 @@
 
 // HOME
 Route::name('home')->get('/', 'maincontroller@index');
+
+Route::name('details')->get('/details', 'maincontroller@detail');

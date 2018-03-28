@@ -3,3 +3,18 @@
 	align-items: center;
 	justify-content: center;
 }
+
+table > thead > tr > th {
+	text-align: center;
+	color: white !important;
+	font-weight: 20px !important;
+}
+
+table > tbody {
+	text-align: center;
+	color: #A8A8A8;
+}
+
+.title-center {
+	text-align: center;
+}
