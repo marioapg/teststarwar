@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.main');
-});
+// Route::get('/', function () {
+//     return view('layouts.main');
+// });
+
+// HOME
+Route::name('home')->get('/', 'maincontroller@index');
