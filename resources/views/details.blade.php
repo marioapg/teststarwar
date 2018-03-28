@@ -5,7 +5,7 @@
 <div class="col-md-8 container-fluid">
 	<table class="table table-striped table-dark">
 		<thead>
-			<th scope="col">{{ $details->name }}</th>
+			<th scope="col"><strong>{{ $details->name }}</strong></th>
 		</thead>
 		<tbody>
 				<tr><td>{{ $details->height }}</td></tr>

@@ -1,38 +1,39 @@
 @extends('layouts.main')
 
 @section('content')
-
-<div class="col-md-8 container-fluid">
-	<table class="table table-striped table-dark">
-	<thead>
-		<th scope="col">Name</th>
-		<th scope="col">Sex</th>
-		<th scope="col">Especies</th>
-	</thead>
-	
-	@foreach($persons->results as $person)
-		<tr>
-			<td>
-				<a href="{{ route('details',['urlparam' => $person->url]) }}">{{ $person->name }}</a>
-			</td>
-			<td>
-				@if($person->gender == 'male')
-					<i class="zmdi zmdi-male"></i>
-				@else
-					@if($person->gender == 'female')
-						<i class="zmdi zmdi-female"></i>
+<div class="row buttom-bottom">
+	<div class="col-md-8 table-responsive">
+		<table id="myTable" class="table table-striped table-dark" data-toggle="table" data-toggle-search="false">
+		<thead>
+			<th scope="col" data-toggle-search="false">Name</th>
+			<th scope="col" data-toggle-search="false">Sex</th>
+			<th scope="col">Especies</th>
+		</thead>
+		
+		@foreach($persons->results as $person)
+			<tr>
+				<td>
+					<a href="{{ route('details',['urlparam' => $person->url]) }}">{{ $person->name }}</a>
+				</td>
+				<td>
+					@if($person->gender == 'male')
+						<i class="zmdi zmdi-male"></i>
 					@else
-						<i class="zmdi zmdi-account-circle"></i>
+						@if($person->gender == 'female')
+							<i class="zmdi zmdi-female"></i>
+						@else
+							<i class="zmdi zmdi-account-circle"></i>
+						@endif
 					@endif
-				@endif
-			</td>
-			<td>
-				{{ $person->species }}
-			</td>
-		</tr>
-	@endforeach
+				</td>
+				<td>
+					{{ $person->species }}
+				</td>
+			</tr>
+		@endforeach
 
-	</table>
+		</table>
+	</div>
 </div>
 @endsection
 
