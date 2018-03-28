@@ -47,10 +47,11 @@ Class CloudwaysAPIClient{
 	}
 
 
-	Public function get_persons() {
+	Public function get_persons($urlparam='http://swapi.co/api/people/') {
 		try
 		{
-			$url = self::API_URL ."people/";
+			// $url = self::API_URL ."people/";
+			$url = $urlparam;
 			$option = array('exceptions' => false);
 			$response = $this->client->get($url);
 			$result = $response->getBody()->getContents();
